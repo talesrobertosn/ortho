@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>EVOLUÇÃO ORTOPÉDICA - PRONTO SOCORRO</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1000px; margin: auto; padding: 20px; text-transform: uppercase; }
+    input, textarea, select { width: 100%; padding: 8px; margin-bottom: 12px; border-radius: 5px; border: 1px solid #ccc; text-transform: uppercase; }
+    label { font-weight: bold; display: block; margin-top: 10px; }
+    button { padding: 10px 20px; background-color: #1976d2; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; text-transform: uppercase; margin-right: 10px; }
+    button:hover { background-color: #1565c0; }
+    .checkbox-group label { display: block; margin-bottom: 6px; }
+    h3 { margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+    #preview, #historico { white-space: pre-wrap; border: 1px solid #ccc; padding: 10px; margin-top: 20px; background-color: #f8f8f8; }
+    .dark-mode { background-color: #121212; color: #e0e0e0; }
+    .dark-mode input, .dark-mode textarea, .dark-mode select { background-color: #1e1e1e; color: #fff; border: 1px solid #444; }
+    .dark-mode #preview, .dark-mode #historico { background-color: #1e1e1e; border-color: #444; }
+  </style>
+</head>
+<body>
+
+<h2>EVOLUÇÃO ORTOPÉDICA - PRIMEIRO ATENDIMENTO</h2>
+
+<form id="formPS">
+  <!-- CAMPOS INICIAIS -->
+  <label for="subjetivo">SUBJETIVO (QUEIXA PRINCIPAL):</label>
+  <textarea id="subjetivo"></textarea>
+
+  <label for="encaminhado">ENCAMINHADO DE:</label>
+  <input type="text" id="encaminhado">
+
+  <label for="acompanhante">ACOMPANHANTE:</label>
+  <select id="acompanhante">
+    <option value="">SELECIONE</option>
+    <option value="MÃE">MÃE</option>
+    <option value="PAI">PAI</option>
+    <option value="FAMILIAR">FAMILIAR</option>
+    <option value="AMIGO">AMIGO</option>
+    <option value="POLICIAL">POLICIAL</option>
+    <option value="PENITENCIÁRIA">PENITENCIÁRIA</option>
+  </select>
+
+  <label for="alergias">ALERGIAS:</label>
+  <input type="text" id="alergias">
+
+  <label for="comorbidades">COMORBIDADES:</label>
+  <input type="text" id="comorbidades">
+
+  <label for="muc">MUC:</label>
+  <input type="text" id="muc">
+
+  <label for="membro">MEMBRO EXAMINADO:</label>
+  <input type="text" id="membro">
+
+  <!-- CONTINUAÇÃO DOS CAMPOS CLÍNICOS E AVALIAÇÕES -->
+  <label for="avaliacaoMembro">AVALIAÇÃO GERAL DO MEMBRO:</label>
+  <select id="avaliacaoMembro">
+    <option value="">SELECIONE</option>
+    <option value="INSPEÇÃO ESTÁTICA E DINÂMICA SEM ALTERAÇÕES, ALINHAMENTO ÓSSEO E POSTURAL PRESERVADO, SEM DEFORMIDADES OU EDEMA, MARCHA PRESERVADA.">CENÁRIO NORMAL</option>
+    <option value="ALTERAÇÃO LEVE NA MARCHA, PEQUENO EDEMA OU EQUIMOSE LOCALIZADA, SIMETRIA LEVEMENTE ALTERADA, SEM DEFORMIDADE IMPORTANTE.">ALTERAÇÃO LEVE</option>
+    <option value="ALINHAMENTO ÓSSEO ALTERADO, DEFORMIDADES VISÍVEIS, EDEMA IMPORTANTE, HEMATOMAS EXTENSOS, MARCHA COMPROMETIDA, CICATRIZES OU LESÕES CUTÂNEAS PRESENTES.">ALTERAÇÃO IMPORTANTE</option>
+  </select>
+
+  <label for="palpacaoMembro">PALPAÇÃO DO MEMBRO:</label>
+  <select id="palpacaoMembro">
+    <option value="">SELECIONE</option>
+    <option value="À PALPAÇÃO, PACIENTE REFERE DOR LOCALIZADA, SEM AUMENTO IMPORTANTE DE TEMPERATURA, SEM TUMORAÇÕES. SEM CREPITAÇÕES OU ESPASMOS VISÍVEIS.">DENTRO DOS LIMITES DA NORMALIDADE</option>
+    <option value="PALPAÇÃO REVELA DOR LOCALIZADA, RIGIDEZ MUSCULAR MODERADA E LEVE AUMENTO DE TEMPERATURA LOCAL.">ALTERAÇÃO LEVE NA PALPAÇÃO</option>
+    <option value="PALPAÇÃO COM DOR INTENSA, CREPITAÇÃO ÓSSEA, ESPASMO MUSCULAR E EVIDÊNCIA DE MASSA OU TUMORAÇÃO. INSTABILIDADE ARTICULAR NOTADA.">ACHADOS IMPORTANTES NA PALPAÇÃO</option>
+  </select>
+
+  <label for="sensibilidadeMembro">SENSIBILIDADE:</label>
+  <select id="sensibilidadeMembro">
+    <option value="">SELECIONE</option>
+    <option value="SENSIBILIDADE SUPERFICIAL E PROFUNDA PRESERVADAS, SEM ÁREAS DE ALTERAÇÃO SENSORIAL.">SENSIBILIDADE NORMAL</option>
+    <option value="DÉFICIT LEVE DE SENSIBILIDADE TÁTIL OU TÉRMICA, SEM COMPROMETIMENTO EXTENSO.">ALTERAÇÃO LEVE DE SENSIBILIDADE</option>
+    <option value="HIPOESTESIA OU ANESTESIA PRESENTE, ALTERAÇÃO DE PROPRIOCEPÇÃO, DISTRIBUIÇÃO COMPATÍVEL COM DERMÁTOMOS.">SENSIBILIDADE PREJUDICADA</option>
+  </select>
+
+  <label for="forcaMembro">FORÇA MUSCULAR:</label>
+  <select id="forcaMembro">
+    <option value="">SELECIONE</option>
+    <option value="FORÇA MUSCULAR PRESERVADA, GRAU 5 NA ESCALA DE OXFORD, SEM DÉFICITS APARENTES.">FORÇA NORMAL</option>
+    <option value="FORÇA MUSCULAR LEVEMENTE REDUZIDA, GRAU 4 NA ESCALA DE OXFORD, COM LEVE FADIGA A ESFORÇO.">REDUÇÃO LEVE</option>
+    <option value="FORÇA MUSCULAR DIMINUÍDA, GRAU 3 OU INFERIOR, COM DÉFICIT FUNCIONAL SIGNIFICATIVO.">FORÇA PREJUDICADA</option>
+  </select>
+
+  <label for="conduta">CONDUTA:</label>
+  <textarea id="conduta" rows="4"></textarea>
+
+  <!-- ÁREA PARA CHECKBOXES POR ARTICULAÇÃO -->
+
+<h3>OMBRO</h3>
+<div class="checkbox-group">
+  <label><input type="checkbox" class="check-fisico" value="NEER E HAWKINS-KENNEDY POSITIVO (IMPACTO SUBACROMIAL)"> NEER E HAWKINS-KENNEDY – IMPACTO SUBACROMIAL</label>
+  <label><input type="checkbox" class="check-fisico" value="JOBE POSITIVO (LESÃO DO SUPRAESPINAL)"> JOBE – LESÃO DO SUPRAESPINAL</label>
+  <label><input type="checkbox" class="check-fisico" value="SPEED / YERGASON POSITIVO (TENDINITE BICIPITAL)"> SPEED / YERGASON – TENDINITE BICIPITAL</label>
+  <label><input type="checkbox" class="check-fisico" value="LIFT-OFF / BELLY PRESS POSITIVO (SUBESCAPULAR)"> LIFT-OFF / BELLY PRESS – SUBESCAPULAR</label>
+  <label><input type="checkbox" class="check-fisico" value="APPREHENSION / RELOCATION POSITIVO (INSTABILIDADE)"> APPREHENSION / RELOCATION – INSTABILIDADE</label>
+</div>
+
+<h3>COTOVELO</h3>
+<div class="checkbox-group">
+  <label><input type="checkbox" class="check-fisico" value="TESTE DO PIVÔ LATERAL POSITIVO (INSTABILIDADE POSTEROLATERAL)"> TESTE DO PIVÔ LATERAL – INSTABILIDADE POSTEROLATERAL</label>
+  <label><input type="checkbox" class="check-fisico" value="COZEN E MILLS POSITIVO (EPICONDILITE LATERAL)"> COZEN E MILLS – EPICONDILITE LATERAL</label>
+  <label><input type="checkbox" class="check-fisico" value="GOLFISTA POSITIVO (EPICONDILITE MEDIAL)"> TESTE DO GOLFISTA – EPICONDILITE MEDIAL</label>
+  <label><input type="checkbox" class="check-fisico" value="VALGO/VARO FORÇADOS POSITIVO (INSTABILIDADE LIGAMENTAR)"> VALGO/VARO FORÇADOS – INSTABILIDADE LIGAMENTAR</label>
+</div>
+
+<h3>PUNHO E MÃO</h3>
+<div class="checkbox-group">
+  <label><input type="checkbox" class="check-fisico" value="FINKELSTEIN POSITIVO (TENOSSINOVITE DE DE QUERVAIN)"> TESTE DE FINKELSTEIN – TENOSSINOVITE DE DE QUERVAIN</label>
+  <label><input type="checkbox" class="check-fisico" value="PHALEN E TINEL POSITIVO (SÍNDROME DO TÚNEL DO CARPO)"> TESTES DE PHALEN E TINEL – TÚNEL DO CARPO</label>
+  <label><input type="checkbox" class="check-fisico" value="ALLEN POSITIVO (PERFUSÃO ARTERIAL)"> TESTE DE ALLEN – PERFUSÃO ARTERIAL</label>
+  <label><input type="checkbox" class="check-fisico" value="ESQUIADOR POSITIVO (LESÃO LIGAMENTO COLATERAL ULNAR)"> TESTE DO ESQUIADOR – LIGAMENTO ULNAR DO POLEGAR</label>
+  <label><input type="checkbox" class="check-fisico" value="PREENSÃO E PINÇA COMPROMETIDAS"> TESTE DE PREENSÃO E PINÇA</label>
+</div>
+
+<h3>QUADRIL</h3>
+<div class="checkbox-group">
+  <label><input type="checkbox" class="check-fisico" value="TRENDELENBURG POSITIVO (GLÚTEO MÉDIO)"> TESTE DE TRENDELENBURG – GLÚTEO MÉDIO</label>
+  <label><input type="checkbox" class="check-fisico" value="FABER POSITIVO (SACROILÍACA / COXO-FEMORAL)"> FABER – SACROILÍACA / COXO-FEMORAL</label>
+  <label><input type="checkbox" class="check-fisico" value="FADIR POSITIVO (IMPACTO FEMOROACETABULAR)"> FADIR – IMPACTO FEMOROACETABULAR</label>
+  <label><input type="checkbox" class="check-fisico" value="LOG ROLL POSITIVO (ROTAÇÃO PASSIVA ALTERADA)"> LOG ROLL – ROTAÇÃO PASSIVA</label>
+  <label><input type="checkbox" class="check-fisico" value="GALEAZZI POSITIVO (ENCURTAMENTO FEMORAL)"> GALEAZZI – ENCURTAMENTO FEMORAL</label>
+</div>
+
+<h3>JOELHO</h3>
+<div class="checkbox-group">
+  <label><input type="checkbox" class="check-fisico" value="LACHMAN / PIVOT SHIFT / GAVETA ANTERIOR POSITIVO (LCA)"> LACHMAN / PIVOT SHIFT / GAVETA ANTERIOR – LCA</label>
+  <label><input type="checkbox" class="check-fisico" value="GAVETA POSTERIOR / GODFREY POSITIVO (LCP)"> GAVETA POSTERIOR / GODFREY – LCP</label>
+  <label><input type="checkbox" class="check-fisico" value="VALGO / VARO FORÇADOS POSITIVO (COLATERAIS)"> VALGO / VARO FORÇADOS – COLATERAIS</label>
+  <label><input type="checkbox" class="check-fisico" value="MCMURRAY / APPLEY POSITIVO (MENISCOS)"> MCMURRAY / APPLEY – MENISCOS</label>
+  <label><input type="checkbox" class="check-fisico" value="ZOHLEN POSITIVO (CONDROPATIA PATELAR)"> ZOHLEN – CONDROPATIA</label>
+  <label><input type="checkbox" class="check-fisico" value="THESSALY POSITIVO (MENISCOS)"> THESSALY – MENISCOS</label>
+</div>
+
+<h3>TORNOZELO E PÉ</h3>
+<div class="checkbox-group">
+  <label><input type="checkbox" class="check-fisico" value="GAVETA ANTERIOR DO TORNOZELO POSITIVO (LIGAMENTO TALOFIBULAR ANTERIOR)"> GAVETA ANTERIOR – TALOFIBULAR ANTERIOR</label>
+  <label><input type="checkbox" class="check-fisico" value="ESTRESSE EM INVERSÃO / EVERSÃO POSITIVO (LIGAMENTOS COLATERAIS)"> ESTRESSE EM INVERSÃO / EVERSÃO – LIGAMENTOS COLATERAIS</label>
+  <label><input type="checkbox" class="check-fisico" value="THOMPSON POSITIVO (TENDÃO DE AQUILES)"> THOMPSON – TENDÃO DE AQUILES</label>
+  <label><input type="checkbox" class="check-fisico" value="SQUEEZE TEST POSITIVO (SINDESMOSE / FRATURA DE FÍBULA)"> SQUEEZE TEST – SINDESMOSE / FRATURA DE FÍBULA</label>
+  <label><input type="checkbox" class="check-fisico" value="HOMAN POSITIVO (TVP)"> HOMAN – TVP</label>
+</div>
+
+<h3>COLUNA</h3>
+<div class="checkbox-group">
+  <label><input type="checkbox" class="check-fisico" value="SPURLING POSITIVO (RADICULOPATIA CERVICAL)"> SPURLING – RADICULOPATIA CERVICAL</label>
+  <label><input type="checkbox" class="check-fisico" value="LHERMITTE POSITIVO (COMPRESSÃO MEDULAR / DESMIELINIZAÇÃO)"> LHERMITTE – SINAL PIRAMIDAL</label>
+  <label><input type="checkbox" class="check-fisico" value="LASÈGUE POSITIVO (COMPRESSÃO RADICULAR LOMBAR)"> LASÈGUE – COMPRESSÃO RADICULAR</label>
+  <label><input type="checkbox" class="check-fisico" value="BRAGARD POSITIVO (RADICULOPATIA LOMBAR)"> BRAGARD – CONFIRMAÇÃO DE RADICULOPATIA</label>
+  <label><input type="checkbox" class="check-fisico" value="SCHOBER POSITIVO (REDUÇÃO DA FLEXÃO LOMBAR)"> SCHOBER – REDUÇÃO DE FLEXÃO LOMBAR</label>
+</div>
+
+<div style="margin-top: 20px;">
+  <button type="button" onclick="gerarEvolucao()">GERAR EVOLUÇÃO</button>
+  <button type="button" onclick="copiarEvolucao()">COPIAR</button>
+  <button type="button" onclick="salvarEvolucao()">SALVAR</button>
+  <button type="button" onclick="limparCampos()">LIMPAR</button>
+  <button type="button" onclick="alternarModoEscuro()">MODO ESCURO</button>
+  <button type="button" onclick="mostrarHistorico()">VER HISTÓRICO</button>
+</div>
+
+<div id="preview"></div>
+<div id="historico"></div>
+
+<script>
+  function gerarEvolucao() {
+    const get = id => document.getElementById(id)?.value.trim();
+    const checks = document.querySelectorAll('.check-fisico:checked');
+    const achados = Array.from(checks).map(el => el.value).join('
+');
+
+    let texto = `EVOLUÇÃO ORTOPÉDICA - PRONTO SOCORRO
+
+`;
+    if (get('subjetivo')) texto += `SUBJETIVO: ${get('subjetivo')}
+`;
+    if (get('encaminhado')) texto += `ENCAMINHADO DE: ${get('encaminhado')}
+`;
+    if (get('acompanhante')) texto += `ACOMPANHANTE: ${get('acompanhante')}
+`;
+    if (get('alergias')) texto += `ALERGIAS: ${get('alergias')}
+`;
+    if (get('comorbidades')) texto += `COMORBIDADES: ${get('comorbidades')}
+`;
+    if (get('muc')) texto += `MUC: ${get('muc')}
+`;
+    if (get('membro')) texto += `MEMBRO EXAMINADO: ${get('membro')}
+`;
+    if (get('avaliacaoMembro')) texto += `AVALIAÇÃO GERAL DO MEMBRO: ${get('avaliacaoMembro')}
+`;
+    if (get('palpacaoMembro')) texto += `PALPAÇÃO DO MEMBRO: ${get('palpacaoMembro')}
+`;
+    if (get('sensibilidadeMembro')) texto += `SENSIBILIDADE: ${get('sensibilidadeMembro')}
+`;
+    if (get('forcaMembro')) texto += `FORÇA MUSCULAR: ${get('forcaMembro')}
+`;
+    if (achados) texto += `
+ACHADOS:
+${achados}
+`;
+    if (get('conduta')) texto += `
+CONDUTA:
+${get('conduta')}
+`;
+    texto += `
+ORIENTO SOBRE SINAIS DE ALARME
+ORIENTO SOBRE IMPORTÂNCIA DE ACOMPANHAMENTO COM UBS
+ORIENTO RETORNO AO PRONTO SOCORRO SE NECESSÁRIO.`;
+
+    document.getElementById("preview").innerText = texto;
+  }
+
+  function copiarEvolucao() {
+    const texto = document.getElementById("preview").innerText;
+    navigator.clipboard.writeText(texto).then(() => alert("Evolução copiada para a área de transferência!"));
+  }
+
+  function salvarEvolucao() {
+    const texto = document.getElementById("preview").innerText;
+    let historico = JSON.parse(localStorage.getItem('evolucoesSalvas')) || [];
+    historico.unshift(texto);
+    if (historico.length > 5) historico.pop();
+    localStorage.setItem('evolucoesSalvas', JSON.stringify(historico));
+    alert("Evolução salva no histórico!");
+  }
+
+  function mostrarHistorico() {
+    const historico = JSON.parse(localStorage.getItem('evolucoesSalvas')) || [];
+    let html = "<h3>HISTÓRICO DE EVOLUÇÕES</h3>";
+    if (historico.length === 0) {
+      html += "<p>Nenhuma evolução salva.</p>";
+    } else {
+      historico.forEach((item, index) => {
+        html += `<div style='border:1px solid #ccc; padding:10px; margin-bottom:10px;'>
+          <strong>Evolução ${index + 1}</strong><br><pre>${item}</pre>
+        </div>`;
+      });
+    }
+    document.getElementById("historico").innerHTML = html;
+  }
+
+  function limparCampos() {
+    document.querySelectorAll('input[type="text"], textarea').forEach(input => input.value = '');
+    document.querySelectorAll('select').forEach(select => select.selectedIndex = 0);
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    document.getElementById("preview").innerText = "";
+  }
+
+  function alternarModoEscuro() {
+    document.body.classList.toggle("dark-mode");
+  }
+</script>
+</form>
+
+<!-- AQUI CONTINUARÃO OS SCRIPTS COM TODAS AS FUNÇÕES E BOTÕES JÁ IMPLEMENTADOS -->
+
+</body>
+</html>
